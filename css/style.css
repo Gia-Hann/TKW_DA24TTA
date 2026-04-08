@@ -1,1 +1,9 @@
-﻿
+﻿p{
+		color:green;
+		font-weight:bolder;
+
+}
+img#avatar{
+		width:100px;
+		height:100px;
+}
