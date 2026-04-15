@@ -1,0 +1,73 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* nền */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #a8edea, #d4fcf9); /* mint gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* container */
+div.container {
+    width: 350px;
+}
+
+/* form */
+form#frmLogin {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* tiêu đề */
+h3#title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #38ada9; /* xanh mint đậm */
+    letter-spacing: 2px;
+}
+
+/* group */
+div.form-group {
+    margin-bottom: 15px;
+}
+
+/* input */
+input.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b8f2e6;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* focus */
+input.form-control:focus {
+    border-color: #38ada9;
+    box-shadow: 0 0 5px rgba(56,173,169,0.5);
+}
+
+/* button */
+input.button {
+    width: 100%;
+    padding: 10px;
+    background: #38ada9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* hover */
+input.button:hover {
+    background: #079992;
+}
