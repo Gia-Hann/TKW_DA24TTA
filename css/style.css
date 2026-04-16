@@ -1,9 +1,95 @@
-﻿p{
-		color:green;
-		font-weight:bolder;
-
+﻿:root{
+  --bg: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+  --card: #ffffff;
+  --primary: #ff7a7a;
+  --secondary: #4ecdc4;
+  --text: #333;
 }
-img#avatar{
-		width:100px;
-		height:100px;
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  padding: 20px;
+  color: var(--text);
+}
+
+/* Tiêu đề */
+p:first-child{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+h3{
+  margin: 15px 0;
+  color: #444;
+}
+
+/* Card chung */
+table{
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-collapse: collapse;
+}
+
+/* Table style */
+th{
+  background: var(--secondary);
+  color: white;
+}
+
+td, th{
+  padding: 10px;
+  text-align: left;
+}
+
+/* Avatar */
+#avatar{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0; 
+  border: 3px solid var(--primary);
+}
+
+/* Danh sách */
+ul{
+  background: var(--card);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+ul li{
+  margin: 5px 0;
+}
+
+/* Link */
+a{
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover{
+  color: #ff3b3b;
+  text-decoration: underline;
+}
+
+/* Khoảng cách */
+hr{
+  margin: 15px 0;
+  border: none;
+  height: 2px;
+  background: var(--secondary);
+  border-radius: 5px;
 }

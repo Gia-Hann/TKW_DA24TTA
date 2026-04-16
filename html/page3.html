@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang "vi">	
+	<head>
+		<title>	ĐĂNG KÍ THÀNH VIÊN </title>
+		<meta charset = "utf-8">
+		<link rel = "stylesheet" href = "../css/style3.css">
+	</head>
+
+</head>
+
+<body>
+
+<form>
+<h2>Đăng ký CLB Sinh viên</h2>
+
+<label>Họ và tên</label>
+<input type="text" placeholder="Nhập đầy đủ họ tên" required>
+
+<label>Email</label>
+<input type="email" placeholder="example@gmail.com" required>
+
+<label>MSSV</label>
+<input type="text" pattern="[0-9]{9}" placeholder="Nhập 9 chữ số">
+
+<label>Ngày sinh</label>
+<input type="date">
+
+<label>Lớp</label>
+<input type="text" placeholder="Nhập mã lớp">
+
+<label>Giới tính</label>
+<div class="inline">
+<label><input type="radio" name="gt"> Nam</label>
+<label><input type="radio" name="gt"> Nữ</label>
+</div>
+
+<label>Kỹ năng</label>
+<div class="inline">
+<label><input type="checkbox"> Code</label>
+<label><input type="checkbox"> Design</label>
+<label><input type="checkbox"> Giao tiếp</label>
+</div>
+
+<label>Giới thiệu bản thân</label>
+<textarea rows="4"></textarea>
+
+<div class="btn-group">
+<button type="submit">Gửi</button>
+<button type="reset">Xóa</button>
+</div>
+
+</form>
+
+</body>
+</html>
