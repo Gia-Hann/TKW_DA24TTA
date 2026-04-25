@@ -1,46 +1,39 @@
-﻿<form id="frmInCC" onsubmit="return false;">
-    <label> Nhập cửu chương:</label> 
-    <input type="text" id="txtSo" value="0" />
-    <input type="button" value="In" onclick="inBangCC();" />
-</form>
+﻿<!DOCTYPE html>
+<html lang "vi">	
+	<head>
+		<title>BẢNG CỬU CHƯƠNG</title>
+		<meta charset = "utf-8">
+		<link rel = "stylesheet" href = "../css/style5.css">
+	</head>
+<body>
 
-<div id="result" aria-live="polite" style="margin-top:12px;"></div>
+<div class="box">
+    <h2>BẢNG CỬU CHƯƠNG</h2>
+
+    <input type="number" id="num" min="1" max="10" placeholder="Nhập số 1 - 10">
+
+    <button onclick="inBCC()">IN</button>
+
+    <div id="kq"></div>
+</div>
 
 <script>
-    function inBangCC() {
-        const input = document.getElementById('txtSo').value.trim();
-        if (input === '') {
-            alert('Vui lòng nhập một số.');
+    function inBCC(){
+        let num = parseInt(document.getElementById("num").value);
+        let kq = "";
+
+        if(isNaN(num) || num < 1 || num > 10){
+            document.getElementById("kq").innerHTML = "Vui lòng nhập số từ 1 đến 10!";
             return;
         }
 
-        const n = Number(input);
-        if (Number.isNaN(n)) {
-            alert('Giá trị không phải số hợp lệ.');
-            return;
+        for(let i = 1; i <= 10; i++){
+            kq += `${num} x ${i} = ${num * i} <br>`;
         }
 
-        // Tạo bảng cửu chương 1..10
-        let html = '<table style="border-collapse:collapse;width:280px">';
-        html += '<thead><tr><th style="text-align:left;padding:6px;border-bottom:1px solid #ddd">Phép tính</th><th style="text-align:right;padding:6px;border-bottom:1px solid #ddd">Kết quả</th></tr></thead><tbody>';
-
-        for (let i = 1; i <= 10; i++) {
-            const value = n * i;
-            html += `<tr>
-                        <td style="padding:6px;border-bottom:1px solid #f0f0f0">${n} × ${i}</td>
-                        <td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0">${value}</td>
-                     </tr>`;
-        }
-
-        html += '</tbody></table>';
-        document.getElementById('result').innerHTML = html;
+        document.getElementById("kq").innerHTML = kq;
     }
-
-    // Bắt phím Enter trên input để in mà không submit form
-    document.getElementById('txtSo').addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            inBangCC();
-        }
-    });
 </script>
+
+</body>
+</html>

@@ -1,100 +1,139 @@
 ﻿* {
-  --bg: linear-gradient(120deg, #a1c4fd, #c2e9fb);
-  --card: #ffffff;
-  --primary: #ff7a7a;
-  --secondary: #4ecdc4;
-  --text: #333;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass: rgba(255, 255, 255, 0.95);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body
+body 
 {
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  padding: 20px;
-  color: var(--text);
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-p:first-child
+.payment-card 
 {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary);
+    background: var(--glass);
+    width: 100%;
+    max-width: 440px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
 }
 
-h3
+.header 
 {
-  margin: 15px 0;
-  color: #444;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-table
+.header h2 
 {
-  background: var(--card);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border-collapse: collapse;
+    color: #1e293b;
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
-th
+.header p 
 {
-  background: var(--secondary);
-  color: white;
+    color: #64748b;
+    font-size: 14px;
 }
 
-td, th
+.input-group 
 {
-  padding: 10px;
-  text-align: left;
+    margin-bottom: 20px;
 }
 
-#avatar
+.row 
 {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 0; 
-  border: 3px solid var(--primary);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-ul
+label 
 {
-  background: var(--card);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+    margin-left: 4px;
 }
 
-ul li
+input, select 
 {
-  margin: 5px 0;
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #f1f5f9;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    box-sizing: border-box;
 }
 
-a
+input:focus, select:focus 
 {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: bold;
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
-a:hover
+.amount-input 
 {
-  color: #ff3b3b;
-  text-decoration: underline;
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
+    font-weight: 700;
+    font-size: 18px;
 }
 
-hr
+.btn-pay 
 {
-  margin: 15px 0;
-  border: none;
-  height: 2px;
-  background: var(--secondary);
-  border-radius: 5px;
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+}
+
+.btn-pay:hover 
+{
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
+}
+
+.btn-pay:active 
+{
+    transform: translateY(0);
+}
+
+.footer 
+{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
 }
