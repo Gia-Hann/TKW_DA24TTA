@@ -1,43 +1,49 @@
 ﻿const productList = [
-    { id:"001",name:"Hoa Oải Hương",price:250000,img:"../assets/images/.3jpg", info:"Hàng Nhập"},
-    { id:"002",name:"Hoa Hồng",price:180000,img:"../assets/images/.4jpg", info:"Đà Lạt"},
-    { id:"003",name:"Hoa Lan",price:500000,img:"../assets/images/.5jpg", info:"Loại 1"}
+    { id:"1",name:"Hoa Oải Hương",price:250000,img:"../assets/images/.3jpg"},
+    { id:"2",name:"Hoa Hồng",price:180000,img:"../assets/images/.4jpg" },
+    { id:"3",name:"Hoa Lan",price:500000,img:"../assets/images/.5jpg"},
 ];
-function addProduct(item)
+function addProduct_v2(product)
 {
+     //Tạo khung chứa cha - Thông tin 1 sản phẩm
     const myDiv=document.createElement("div");
-    myDiv.setAttribute("class","prodcut-item");
+    myDiv.setAttribute("class","prodcut-item col-sm-3");
+    
+    //Tạo khung chứa số 1 - Hình ảnh sản phẩm
+    const myDiv1 = document.createElement("div");
+    myDiv1.setAttribute("class","product-image");
 
-    const myImage= document.createElement("div");
-    myImage.setAttribute("class","product-image");
+    //Tạo node Hình ảnh
     const productImg=document.createElement("img");
-    productImg.setAttribute("src","../assets/images/.jpg");
-    productImg.setAttribute("alt","SẢN PHẨM HOA");
-    myImage.appendChild(productImg);
-    myDiv.appendChild(myImage);
+    productImg.setAttribute("src",imgSrc);
+    productImg.setAttribute("alt",product.name);
+    productImg.style.width="100%";
+   productImg.style.height="250px";
 
-    const myInfo=document.createElement("div");
-    myInfo.setAttribute("class","product-info");
+   //Gán hình vào khung chứa 1
+   myDiv1.appendChild(productImg);
 
-    const name =document.createElement("h3");
-    const name=document.createTextNode("Tên sản phẩm");
-    name.appendChild(nameText);
+   //Tạo khung chứa số 2-Thông tin sản phẩm
+   const myDiv2 = document.createElement("div");
+   myDiv2.setAttribute("class","product-info")
 
-    const price = document.createElement("p");
-    const priceText = document.createTextNode("Gía: 100.000");
-    price.appendChild(priceText);
+   //Tạo node paragraph1 - Tên sản phẩm
+    const productName = document.createElement("p");
+    const prodcutNameText = document.createTextNode("product.name");
+    productName.appendChild(prodcutNameText);
+    myDiv2.appendChild(productName);
 
-    const link = document.createElement("a")
-    link.setAttribute("href","#");
-    const linkText = document.createTextNode("Xem chi tiết");
-    link.appendChild(linkText);
+    //Tạo node paragraph2 - Gía sản phẩm
+    const productPrice = document.createElement("p");
+    const productpriceText = document.createTextNode(price);
+    productPrice.appendChild(productpriceText);
+    myDiv2.appendChild(productLink);
 
-    myInfo.appendChild(name);
-    myInfo.appendChild(price);
-    myInfo.appendChild(link);
+    myDiv.appendChild(myDiv1);
+    myDiv.appendChild(myDiv2);
 
-    myDiv.appendChild(myInfo);
-
-    const container=document.getElementById("product-list");
-    container.appendChild(myDiv);
+    //Thêm khung chứa cha vào body
+    document.getElementById("product-List").appendChild(myDiv);
 }
+
+    
